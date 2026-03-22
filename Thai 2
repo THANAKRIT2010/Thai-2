@@ -1,0 +1,115 @@
+-- =========================
+--        LOAD WIND UI
+-- =========================
+local WindUI = loadstring(game:HttpGet("https://github.com/Footagesus/WindUI/releases/latest/download/main.lua"))()
+
+local Players = game:GetService("Players")
+local TeleportService = game:GetService("TeleportService")
+local LocalPlayer = Players.LocalPlayer
+
+-- =========================
+--        WINDOW
+-- =========================
+local Window = WindUI:CreateWindow({
+    Title = "Discrod Thanakrit1669",
+    Icon = "key",
+    Author = "By เสี๋ยคิวจัดให้ XD",
+    Folder = "MyHub",
+    Size = UDim2.fromOffset(580, 400),
+    Theme = "Dark"
+})
+
+-- =========================
+--        MAIN TAB (เพิ่มใหม่)
+-- =========================
+local MainTab = Window:Tab({
+    Title = "Main Script",
+    Icon = "home"
+})
+
+MainTab:Section({ Title = "Scripts" })
+
+-- Fly GUI
+MainTab:Button({
+    Title = "เปิด Fly GUI ✈️",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt"))()
+    end
+})
+
+-- Spam Money
+MainTab:Button({
+    Title = "Spam Money 💰",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/TOUx1/Roblox-script/refs/heads/main/Spam%20money"))()
+    end
+})
+
+-- Script Pastebin
+MainTab:Button({
+    Title = "Script Pastebin ⚙️",
+    Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/gvmvUh85"))()
+    end
+})
+
+-- Copy Outfit
+MainTab:Button({
+    Title = "Copy Outfit 👕",
+    Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/wino444/cityThai/refs/heads/main/Copy%20Outfit.lua"))()
+    end
+})
+
+-- =========================
+--        SETTINGS TAB
+-- =========================
+local SettingsTab = Window:Tab({
+    Title = "Discord & Instagram",
+    Icon = "settings"
+})
+
+SettingsTab:Button({
+    Title = "รีเข้าแมพ",
+    Callback = function()
+        TeleportService:Teleport(game.PlaceId)
+    end
+})
+
+SettingsTab:Button({
+    Title = "ปิด UI",
+    Callback = function()
+        local gui = LocalPlayer.PlayerGui:FindFirstChild("MyHub")
+        if gui then gui:Destroy() end
+    end
+})
+
+SettingsTab:Section({ Title = "Contact" })
+
+SettingsTab:Button({
+    Title = "คัดลอก IG 📸",
+    Callback = function()
+        if setclipboard then
+            setclipboard("https://www.instagram.com/ezmxyxii/")
+        end
+        WindUI:Notify({
+            Title = "สำเร็จ",
+            Description = "คัดลอก IG แล้ว ✅",
+            Duration = 2
+        })
+    end
+})
+
+SettingsTab:Button({
+    Title = "คัดลอก Discord 💬",
+    Callback = function()
+        if setclipboard then
+            setclipboard("https://discord.gg/XKJTssDUSR")
+        end
+        WindUI:Notify({
+            Title = "สำเร็จ",
+            Description = "คัดลอก Discord แล้ว ✅",
+            Duration = 2
+        })
+    end
+})
